@@ -1,0 +1,31 @@
+= form_for @post do |f|
+  - if @post.errors.any?
+    #error_explanation
+      h2 = pluralize(@post.errors.count, "error")
+        | Невозможно сохранить пост из-за следующих ошибок:
+      ul
+        - @post.errors.full_messages.each do |msg|
+          li = msg
+
+  .form-group
+
+    p
+      - if @post.persisted?
+        = f.text_field :title, :class => "form-control"
+      - else
+        = f.text_field :title, :autofocus => true, :placeholder => "Заголовок", :class => "form-control"
+
+    p Разрешены теги HTML. Код публиковать через &lt;code&gt;. Для публикации HTML-кода использовать &amp;lt; и &amp;gt;
+
+    p
+      - if @post.persisted?
+        = f.text_area :text, size: "30x20", :autofocus => true, :class => "form-control"
+      - else
+        = f.text_area :text, size: "30x20", :placeholder => "Текст", :class => "form-control"
+
+    p.edit_post_checkbox
+      = f.check_box :published
+      = f.label :published, 'опубликовать'
+
+    p
+      = f.submit "Публиковать", :class => "btn btn-success btn-lg"

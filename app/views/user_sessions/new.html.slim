@@ -1,0 +1,16 @@
+#fon
+  #login-password
+    h1 Вход в аккаунт
+
+    = form_for @user_session, :url => user_sessions_path do |f|
+      = f.label :login, "Логин"
+      br
+      = f.text_field :login, :autofocus => true
+      br
+      br
+      = f.label :password, "Пароль"
+      br
+      = f.password_field :password
+      br
+      br
+      = f.submit "Подтверждаю"

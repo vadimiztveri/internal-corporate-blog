@@ -1,0 +1,213 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ *= require '_comments'
+ */
+
+
+.container{
+  max-width:56em;
+}
+.holders{
+  padding-top:90px;
+}
+.avatar{
+  float:left;
+  margin:0 15px 15px 0;
+}
+p.avatar img{
+  width:80px;
+  height:80px;
+  border:1px solid #ccc;
+}
+.author{
+  display:inline;
+  padding:5px 0 0 0;
+  margin:0;
+  color:#555;
+  font-size:40%;
+}
+p.mail{
+  clear:both;
+}
+sup{
+  color:#aaa;
+}
+.error{
+  background:#ff9283;
+  padding:2px 10px 5px 10px;
+  border-radius:5px;
+  margin-bottom:15px;
+}
+.field_with_errors label{
+  background:#ff9283;
+  margin-bottom:0;
+}
+.navbar-collapse{
+  float:left;
+}
+p.navbar-right{
+  margin-top:13px;
+}
+#cellar{
+  height:100px;
+  background:#222;
+  color:#eee;
+  padding-top:30px;
+  margin:-100px 0 0 0;
+}
+#cellar div{
+  height:40px;
+}
+.new-post-cellar{
+  font-size:160%;
+}
+#cellar .new-post-cellar{
+  margin-top:-7px;
+}
+#fon{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:#000;
+  z-index:10000;
+  opacity:0.5;
+}
+#login-password{
+  position:absolute;
+  background:#fff;
+  width:400px;
+  top:200px;
+  left:50%;
+  margin-left:-200px;
+  text-align:center;
+  padding:0 0 40px 0;
+  border-radius:5px;
+  box-shadow:10px 10px 20px #000;
+}
+#login-password input{
+  background:#ccc;
+  font-size:150%;
+  margin-bottom:10px;
+  border:2px solid #999;
+  border-radius:3px;
+}
+.entire{
+  margin:0 auto;
+}
+.post-text{
+  margin-bottom:70px;
+}
+.post-text h2, h3{
+  margin:20px 0 15px 0;
+}
+.post-text ul, pre, code{
+  margin:10px 0 15px 0;
+}
+.post-text p{
+  padding:5px 0 10px 0;
+}
+.post-text, #post_text, .entire{
+  max-width: 56em;
+}
+p.draft{
+  padding:5px;
+  border-radius:3px;
+  background:#ff9283;
+}
+.pagination{
+  font-size:100%;
+  width:100%;
+  text-align:center;
+}
+.pagination em{
+  font-size:100%;
+  background:#ccc;
+  padding:2px 5px 2px 5px;
+  border-radius:3px;
+  font-style:normal;
+  font-size:120%;
+}
+.edit_user input{
+  width:400px;
+  font-size:130%;
+  padding:3px;
+}
+p.big-botton{
+  margin:10px 0 0 20px;
+}
+.add-new-post{
+  background:#333;
+  background:linear-gradient(to top, #222, #444);
+  border:1px solid #555;
+  padding:5px 10px 8px 10px;
+  font-size:140%;
+  border-radius:5px;
+  color:#999;
+  text-shadow:-1px -1px 1px #111;
+  box-shadow:1px 1px 2px #000,-1px -1px 2px #444;
+}
+.add-new-post:hover{
+  color:#ddd;
+  text-decoration:none;
+  text-shadow:-1px -1px 1px #222;
+  background:#444;
+  background:linear-gradient(to top, #333, #555);
+}
+.edit-post{
+  font-size: 40%;
+  color:#fff;
+
+  background:#2d60d0;
+  background:linear-gradient(to top, #4d6ce1, #5a7def);
+
+  border:1px solid #2d5392;
+  padding:4px 7px;
+  border-radius:7px;
+  box-shadow:1px 1px 2px #ccc,-1px -1px 2px #fff;
+
+  margin:0 0 0 15px;
+}
+.edit-post:hover{
+  color:#ddd;
+  text-decoration:none;
+}
+.prettyprint ol li{
+  margin-left: -32px;
+}
+.new-post{
+  color:#d2253c;
+}
+.users-page{
+  margin:0 0 40px 0;
+  color:#d2253c;
+}
+.btn-primary a{
+  color:#fff;
+}
+.btn-primary a:hover{
+  color:#fff;
+  text-decoration:none;
+}
+p.edit_post_checkbox{
+  padding:0 0 5px 0;
+}
+p.edit_post_checkbox input{
+  margin:4px 5px 0 0;
+  float:left;
+}
+p.edit_post_checkbox label{
+  width:200px;
+  font-weight:normal;
+}

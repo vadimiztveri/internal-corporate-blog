@@ -1,0 +1,21 @@
+.entire
+
+  - if !@post.published
+    .alert.alert-warning Черновик!
+
+  h1
+    .author.text-muted
+      = l @post.created_at, :format => "%d %B"
+      | ,&nbsp;
+      = mail_to @post.user.email, @post.user.email, {:style => "text-muted"}
+    br  
+    = @post.title
+    - if @post.new_post? current_user
+      - @post.view! current_user
+      sup.new-post &nbsp;Новый
+
+    - if @post.user.id == current_user.id
+      ' &nbsp;
+      = link_to "Редактировать ...", edit_post_path(@post), {:class => "btn btn-primary btn-xs"}
+
+  .post-text = @post.text.html_safe

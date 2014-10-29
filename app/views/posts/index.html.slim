@@ -1,0 +1,26 @@
+h1
+  ' Все посты
+  small = link_to image_tag("rss.png"), posts_url(:format => :rss, :token => current_user.single_access_token)
+
+hr
+
+.entire
+
+  - @posts.each do |post|
+
+    h2
+      small.author.text-muted
+        = l post.created_at, :format => "%d %B"
+        | ,&nbsp;
+        = mail_to post.user.email, post.user.email, {:style => "text-muted"}
+        br
+      = link_to post.title, post_path(post)
+      - if post.new_post? current_user
+        sup.new-post &nbsp;Новый
+      - if post.user.id == current_user.id
+        ' &nbsp;
+        small.btn.btn-primary.btn-xs
+          = link_to 'Редактировать ...', edit_post_path(post)
+
+= will_paginate @posts, :previous_label => "← Новые",
+                        :next_label => "Древние →"

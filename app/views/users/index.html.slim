@@ -1,0 +1,43 @@
+p class="avatar"
+  = image_tag @user.gravatar_url
+
+h1
+  | Участник блога: 
+  = @user.login
+
+p.mail 
+  = mail_to @user.email, @user.email
+
+hr
+
+h1.users-page Написал посты:
+
+- @posts.each do |post|
+
+  .entire
+
+    - if post.published
+      h2
+        .author.text-muted
+          = l post.created_at, :format => "%d %B"
+        br
+        = link_to post.title, post_path(post)
+      - if current_user.id == @user.id
+        small.btn.btn-primary.btn-xs
+          = link_to 'Редактировать ...', edit_post_path(post)
+
+    - else
+      - if current_user.id == @user.id
+        .alert.alert-warning Черновик!
+        h2
+          .author.text-muted
+            = l post.created_at, :format => "%d %B"
+          br
+          = link_to post.title, post_path(post)
+          ' &nbsp;
+          - if post.user.id == current_user.id
+            small.btn.btn-primary.btn-xs
+              = link_to 'Редактировать ...', edit_post_path(post)
+
+= will_paginate @posts, :previous_label => "← Новые",
+                        :next_label => "Древние →"

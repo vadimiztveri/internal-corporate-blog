@@ -1,0 +1,17 @@
+h1 Коллективный блог «Меньше ада»
+
+p Этот блог создан с целью уменьшить количество ада в коде.
+
+p = link_to "Блог", controller: "posts"
+
+p = link_to "Участники проекта «Меньше ада»", controller: "users"
+
+h2 Новые посты:
+
+- @posts.each do |post|
+	h3
+		a href="/posts/#{post.id}"
+			= post.title
+	.post
+		= post.text.html_safe
+	hr
