@@ -8,8 +8,8 @@ html lang="en"
 
     = auto_discovery_link_tag(:rss, posts_url(:format => :rss, :token => current_user.single_access_token))
 
-    title Блог «Цифрономика»
-    
+    title Внутренний корпоративный блог
+
     = favicon_link_tag 'favicon.ico'
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
@@ -34,8 +34,6 @@ html lang="en"
 
         p.nav.navbar-nav.navbar-right
           = link_to 'logout', user_sessions_path, :method => :delete, :rel => 'nofollow', :data => {:confirm => 'Точно выходим?' }
-
-    <!-- Контейнер -->
 
     #big-contener.container.holders
 

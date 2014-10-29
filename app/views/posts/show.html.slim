@@ -8,7 +8,7 @@
       = l @post.created_at, :format => "%d %B"
       | ,&nbsp;
       = mail_to @post.user.email, @post.user.email, {:style => "text-muted"}
-    br  
+    br
     = @post.title
     - if @post.new_post? current_user
       - @post.view! current_user
